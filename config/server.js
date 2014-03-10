@@ -8,6 +8,7 @@ server.configure(function() {
 	server.set('port',EXPRESS_PORT);
 	server.set('view engine', 'jade');
 	server.use(express.static(__dirname + '../views'));
+	server.use(server.router);
 });
 
 server.listen(EXPRESS_PORT, function() {

@@ -1,7 +1,17 @@
-## BEM (Block Element Modifier)
+# CSS
 
+## Normal Flow
+Boxes in the normal flow belong to a formatting context, which may be block or inline, but not both simultaneously. Block boxes participate in a block formatting context. Inline boxes participate in an inline formatting context.
+
+## BEM (Block Element Modifier)
+```
+.signup_form-email {
+	/* styling for email input */
+}
+```
 A structured way of naming classes that is based on the properties of the element
 
+## SMACSS (Scalable/Modular Architecture for CSS)
 
 ## Box-sizing
 ```
