@@ -3,18 +3,6 @@
 A structured way of naming classes that is based on the properties of the element
 
 
-## Positioning
-
-### Static
-
-### Relative
-
-### Absolute
-
-### Fixed
-
-### inherit
-
 ## Box-sizing
 ```
 *, *:before, *:after {
