@@ -1,0 +1,24 @@
+{
+  "name": "BARD",
+  "version": "0.0.1",
+  "authors": [
+    "CJ Ponti <cjponti@gmail.com>"
+  ],
+  "description": "A collection of lessons about HTML, CSS, Javascript, about other web technologies that will turn anyone into a Bad Ass Rockstar Developer.",
+  "main": "index.js",
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "learn"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/theponti/bard.git",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

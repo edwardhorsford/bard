@@ -1,0 +1,25 @@
+{
+  "name": "BARD",
+  "version": "0.0.1",
+  "description": "A collection of lessons for HTML, CSS, & Javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/theponti/bard.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "learn"
+  ],
+  "author": "theponti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/theponti/bard/issues"
+  },
+  "homepage": "https://github.com/theponti/bard"
+}
