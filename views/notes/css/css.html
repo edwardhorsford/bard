@@ -1,0 +1,27 @@
+<h1 id="css">CSS</h1>
+<h2 id="normal-flow">Normal Flow</h2>
+<p>Boxes in the normal flow belong to a formatting context, which may be block or inline, but not both simultaneously. Block boxes participate in a block formatting context. Inline boxes participate in an inline formatting context.</p>
+<p><strong>Block Formatting Context</strong>
+Block formatted elements flow vertically within their container box. Their left outer edge touches the left edge of their container regardless of float.</p>
+<p><strong>Inline Formatting Context</strong>
+Inline formatted elements flow horizontally across their container box. A box that contains inline elements is usually referred to as a line box.</p>
+<h2 id="bem-block-element-modifier-">BEM (Block Element Modifier)</h2>
+<pre><code>.signup_form-email {
+    /* styling for email input */
+}
+</code></pre><p>A structured way of naming classes that is based on the properties of the element</p>
+<h2 id="smacss-scalable-modular-architecture-for-css-">SMACSS (Scalable/Modular Architecture for CSS)</h2>
+<h2 id="box-sizing">Box-sizing</h2>
+<pre><code>*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+</code></pre><h2 id="clearfix">Clearfix</h2>
+<pre><code>.clearfix:before, .clearfix:after {
+    content: &#39; &#39;;
+    display: table;
+}
+
+.clearfix { zoom: 1; }
+</code></pre>
