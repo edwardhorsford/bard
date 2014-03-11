@@ -11,6 +11,7 @@ server.configure(function() {
 		.set('view engine', 'jade')
 		.set('views', path.join(__dirname, '../views'))
 		.engine('jade', engines.jade)
+		// .engine('.html', engines.html)
 		.use(express.static(path.join(__dirname,'../public')))
 		.use(server.router);
 });
