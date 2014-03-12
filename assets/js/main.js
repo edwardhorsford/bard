@@ -6,6 +6,7 @@ app.config(['$routeProvider, $locationProvider',
 		function getPartial(type, page) {
 			return '/pages/'+type+'/'+page;
 		}
+		
 		function getNotes(lang, topic) {
 			return '/notes/'+lang+'/'+topic;
 		}
