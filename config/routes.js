@@ -9,7 +9,7 @@ module.exports = function(server) {
 
 	// Serve notes
 	server.get('/notes/:lang/:topic', function(req, res, next) {
-		res.render('notes/'+req.params.lang+'/'+req.params.topic+'.html');
+		res.render('notes/'+req.params.lang+'/'+req.params.topic);
 	});
 
 	// Serve partials

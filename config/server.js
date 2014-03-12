@@ -8,10 +8,13 @@ var server = express();
 
 server.configure(function() {
 	server.set('port',EXPRESS_PORT)
-		.set('view engine', 'jade')
+		.engine('html', require('ejs').renderFile)
+		.set('view engine', 'html')
 		.set('views', path.join(__dirname, '../views'))
-		.engine('jade', engines.jade)
-		// .engine('.html', engines.html)
+		.use(express.logger('dev'))
+		.use(express.json())
+		.use(express.urlencoded())
+		.use(express.methodOverride())
 		.use(express.static(path.join(__dirname,'../public')))
 		.use(server.router);
 });
