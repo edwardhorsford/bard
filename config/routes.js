@@ -3,11 +3,6 @@ module.exports = function(server) {
 	var path = require('path');
 	var title = { title: 'BARD' };
 
-	// Serve index page
-	server.get('/', function(req, res, next) {
-		res.render('index', title);
-	});
-
 	// Serve notes
 	server.get('/notes/:lang/:topic', function(req, res, next) {
 		res.render('notes/'+req.params.lang+'/'+req.params.topic);
