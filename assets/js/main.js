@@ -1,4 +1,4 @@
-var app = angular.module('BARD', [ 'ngRoute' ])
+angular.module('BARD', [ 'ngRoute', 'BARD.controllers' ])
 	.config(['$routeProvider, $locationProvider',
 		function($routeProvider, $locationProvider) {
 			
@@ -24,14 +24,14 @@ var app = angular.module('BARD', [ 'ngRoute' ])
 		}
 	]);
 
-app.controller('HomeCtrl', [ '$scope', '$location',
-	function($scope, $location) {
+angular.module('BARD.controllers', [])
+	.controller('HomeCtrl', [ '$scope', '$location',
+		function($scope, $location) {
 
-	}
-]);
+		}
+	])
+	.controller('CSSCtrl', [ '$scope', '$location',
+		function($scope, $location) {
 
-app.controller('CSSCtrl', [ '$scope', '$location',
-	function($scope, $location) {
-
-	}
-]);
+		}
+	])
