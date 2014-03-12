@@ -10,10 +10,12 @@ server.configure(function() {
 	server.set('port',EXPRESS_PORT)
 		.engine('html', require('ejs').renderFile)
 		.set('view engine', 'html')
+		.set('view options', { layout: false })
 		.set('views', path.join(__dirname, '../views'))
 		.use(express.logger('dev'))
 		.use(express.json())
 		.use(express.urlencoded())
+		.use(express.cookieParser())
 		.use(express.methodOverride())
 		.use(express.static(path.join(__dirname,'../public')))
 		.use(server.router);

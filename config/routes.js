@@ -1,10 +1,11 @@
 module.exports = function(server) {
 
 	var path = require('path');
+	var title = { title: 'BARD' };
 
 	// Serve index page
 	server.get('/', function(req, res, next) {
-		res.render('index');
+		res.render('index', title);
 	});
 
 	// Serve notes
@@ -19,7 +20,7 @@ module.exports = function(server) {
 
 	// Redirect to index page for all other requests
 	server.get('*', function(req, res, next) {
-		res.render('index');
+		res.render('index', title);
 	});
 
 };
