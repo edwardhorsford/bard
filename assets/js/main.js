@@ -6,7 +6,7 @@ app.config(['$routeProvider, $locationProvider',
 		function getPartial(type, page) {
 			return '/pages/'+type+'/'+page;
 		}
-		
+
 		function getNotes(lang, topic) {
 			return '/notes/'+lang+'/'+topic;
 		}
@@ -20,6 +20,8 @@ app.config(['$routeProvider, $locationProvider',
 				templateUrl: getNotes('css', 'css'),
 				controller: CSSCtrl
 			})
+
+		$locationProvider.html5Mode(true);
 	}
 ]);
 
