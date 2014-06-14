@@ -1,9 +1,51 @@
 <h1 id="git">Git</h1>
 <p><img src="../../assets/images/git.png" alt="Git"></p>
+<p>Git is a version control system and source control management tool. It handles
+the management of changes to documents. It allows developers to manage multiple
+versions of the same codebase, which comes in handy, for example, when bugs get
+accidentally introduced and the application needs to be reverted to a previous
+working state. It also helps</p>
+<h2 id="committing">Committing</h2>
+<pre><code>~&gt; git commit -m &#39;Initial commit&#39;
+</code></pre><p>Committing in Git takes all of the changes that are in the staging area and
+takes a snapshot of them. The &#39;-m&#39; flag, which stands for message, allows you
+to add a message to the snapshot.</p>
+<p>It&#39;s a best practice to be very explicit about the changes you have made in
+your commit message, as it will help you and other developers to know what
+happened in each commit without having to review the code.</p>
+<p>There is popular phrase for committing that says &#39;Commit early. Commit often.&#39;
+Essentially, it is best practice to commit after doing any changes to a file.
+This comes in very handy when your code stops working because you will be
+able to rollback your changes commit by commit back to point when the code was
+working.</p>
+<h2 id="branching">Branching</h2>
+<p><img src="../../assets/images/git-branching.png" alt="Git Branching"></p>
+<p>Branching means you diverge from the main line of development and continue to
+do work without messing with that main line.  </p>
+<p>When working on a new feature or a bug fix, it is best practice to create a
+new branch for the new code you are going to write and to give that branch
+a descriptive name, such as &#39;feature/add-navigation-bar&#39;.</p>
+<p>To create a branch, you can use the git branch command like so:</p>
+<pre><code>~&gt; git branch new_branch
+</code></pre><p>You</p>
 <ul>
-<li>Version Control System</li>
-<li>Source Control Management Tool - Handles the management of changes to documents. It allows developers to manage multiple versions of the same codebase, which comes in handy when bugs get accidently introduced and the application needs to be reverted to a previous working state.</li>
+<li>duplicates your current branch into a new branch
+-</li>
 </ul>
+<p>The above command will create a new branch with the name new_branch that is an
+exact duplicate of the branch you are currently in. You can
+also create a new branch and checkout into it by using the git checkout command
+with the &#39;-b&#39; flag, like so:</p>
+<pre><code>~&gt; git checkout -b new_branch
+</code></pre><p>Once a branch already exists and you would like to move into it, use the
+checkout command like so:</p>
+<pre><code>~&gt; git checkout new_branch
+</code></pre><p>Changes that are made in one branch do not affect other branches until the
+two branches are merged together. If you want to merge two branches together,
+you can use the git merge command.</p>
+<pre><code>~&gt; git merge new_branch
+</code></pre><p>The above command will merge the branch named new_branch into the branch that
+you are currently in.</p>
 <h2 id="commands">Commands</h2>
 <h3 id="git-init">git init</h3>
 <pre><code>~&gt; git init
@@ -12,55 +54,49 @@
 </ul>
 <h3 id="git-add">git add</h3>
 <pre><code>~&gt;  git add a.txt
-~&gt;  git add .
-</code></pre><ul>
-<li>if done on a file that is not being tracked, this command will add file to tracked files and adds it to staging area</li>
-<li>when done on a file that is already being tracked, this command will just add current state of file to staging area</li>
-<li>you can pass a filename to this command to add one file of you can type &#39;.&#39; to add all unstaged changes</li>
-</ul>
-<h3 id="git-add">git add</h3>
+</code></pre><pre><code>~&gt;  git add --all
+</code></pre><p>This command updates the index using the current content found in the working
+tree, to prepare the content staged for the next commit. It typically adds the
+current content of existing paths as a whole, but with some options it can also
+be used to add content with only part of the changes made to the working tree
+files applied, or remove paths that do not exist in the working tree anymore.</p>
+<p>The &quot;index&quot; holds a snapshot of the content of the working tree, and it is this
+snapshot that is taken as the contents of the next commit. Thus after making any
+changes to the working directory, and before running the commit command, you
+must use the add command to add any new or modified files to the index.</p>
+<p>This command can be performed multiple times before a commit. It only adds the
+content of the specified file(s) at the time the add command is run; if you want
+subsequent changes included in the next commit, then you must run git add again
+to add the new content to the index.</p>
+<p>The git status command can be used to obtain a summary of which files have
+changes that are staged for the next commit.</p>
+<p>The git add command will not add ignored files by default. If any ignored files
+were explicitly specified on the command line, git add will fail with a list of
+ignored files. Ignored files reached by directory recursion or filename globbing
+performed by Git (quote your globs before the shell) will be silently ignored.
+The &#39;git add&#39; command can be used to add ignored files with the -f (force) option.</p>
+<h3 id="git-diff">git diff</h3>
 <pre><code>~&gt;  git diff
-</code></pre><pre><code>~&gt;  git diff a.txt
-</code></pre><h3 id="git-commit">git commit</h3>
-<p><code>git commit -m &#39;Initial commit&#39;</code></p>
-<ul>
-<li>commits staged changes</li>
-<li>this command takes one mandatory flag (&#39;-m&#39;), which stands for the message you want to attach to this commit</li>
-</ul>
+</code></pre><p>Using the git diff command will show you the changes between the working tree
+and the index or a tree, changes between the index and a tree, changes between
+two trees, changes between two blob objects, or changes between two files on
+disk.</p>
+<p>Running the git diff command with no arguments, will show the diffs between all
+of the files in the the Git repository in your current branch. If you only want
+to see the diff of one file, you can pass the filename to the command like so:</p>
+<pre><code>~&gt;  git diff a.txt
+</code></pre><h3 id="git-rm">git rm</h3>
+<pre><code>~&gt;  git rm a.txt
+</code></pre><p>This command is used to remove files from Git. Running it as shown above will
+also remove the file from your computer. You can run this command with <code>--cached</code>
+to remove the file from the git staging area.</p>
 <h3 id="git-pull">git pull</h3>
-<p><code>git pull origin master</code></p>
-<ul>
-<li>pulls codebase from hosting server and merges it with your codebase</li>
-</ul>
+<pre><code>~&gt; git pull origin master
+</code></pre><p>This command pulls the code that is in the master branch from the origin remote
+and merges it with your branch.</p>
 <h3 id="git-push">git push</h3>
-<p><code>git push origin master</code></p>
-<ul>
-<li>pushs your code to hosting server and merges it with its codebase</li>
-<li>This command takes two arguments. The first argument is the remote server to
-which you wish to push your code. The second argument is the branch that you
-wish to push to.</li>
-</ul>
-<h3 id="git-branch">git branch</h3>
-<p><code>git branch new_branch</code></p>
-<ul>
-<li>duplicates your current branch into a new branch</li>
-<li>changes made in one branch do not affect other branches until the two branches are merged together</li>
-</ul>
-<h3 id="git-checkout">git checkout</h3>
-<p><code>git checkout new_branch</code></p>
-<ul>
-<li>moves you into the branch whose name is passed to this command</li>
-</ul>
-<p><code>git checkout -b new_branch</code></p>
-<ul>
-<li>you can create a new branch and checkout into it in one command by doing:</li>
-</ul>
-<h3 id="git-merge">git merge</h3>
-<p><code>git merge new_branch</code></p>
-<ul>
-<li>merges one branch with the current branch</li>
-</ul>
-<h2 id="best-practices">Best Practices</h2>
-<ul>
-<li>When writing a commit message, explicitly state the changes you have made</li>
-</ul>
+<pre><code>~&gt; git push origin master
+</code></pre><p>This command pushs your code to the master branch of the origin remote and
+merges its branch. This command also takes two arguments. The first argument
+is the remote server to which you wish to push your code. The second argument is
+the branch that you wish to push to.</p>
