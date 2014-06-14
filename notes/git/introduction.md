@@ -90,17 +90,6 @@ to remove the file from the git staging area.
 
 ### git checkout
 
-```
-~> git checkout new_branch
-```
-
-- moves you into the branch whose name is passed to this command
-
-```
-~> git checkout -b new_branch
-```
-
-- you can create a new branch and checkout into it in one command by doing:
 
 
 ### git merge
@@ -110,6 +99,37 @@ to remove the file from the git staging area.
 ```
 
 - merges one branch with the current branch
+
+
+## Branching
+
+![Git Branching](../../assets/images/git-branching.png)
+
+Branching means you diverge from the main line of development and continue to
+do work without messing with that main line.  
+
+When working on a new feature or a bug fix, it is best practice to create a
+new branch for the new code you are going to write and to give that branch
+a descriptive name, such as 'feature/add-navigation-bar'.
+
+To create a branch, you can use the git checkout command like so:
+
+```
+~> git checkout -b new_branch
+```
+
+The above command will create a new branch with the name new_branch and
+immediately move you into that branch.
+
+Once a branch already exists and you would like to move into it, use the
+checkout command like so:
+
+```
+~> git checkout new_branch
+```
+
+
+
 
 
 ## Best Practices
