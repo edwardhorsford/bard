@@ -40,20 +40,11 @@ irb(main)&gt; &#39;Gerry&#39;.class
 <h3 id="-include-">.include?</h3>
 <pre><code class="lang-ruby">irb(main)&gt; [1,2,3].include?(2)
 =&gt; true
-irb(main)&gt; &quot;cj&quot;.include?(&quot;c&quot;)
-=&gt; true
 irb(main)&gt; [4,5,6].include?(&quot;j&quot;)
 =&gt; false
 </code></pre>
 <p>This method will check to see if the argument is present in the value the
 method is called on.</p>
-<h3 id="-strip">.strip</h3>
-<pre><code class="lang-ruby">irb(main)&gt; &quot;hello     &quot;.strip
-=&gt; &quot;hello&quot;
-</code></pre>
-<p>The strip method will return the value of a string with the whitespace at the
-end removed.</p>
-<h4 id="note-this-method-does-not-change-the-value-of-the-string-">Note: This method does not change the value of the string.</h4>
 <h3 id="-">!</h3>
 <pre><code class="lang-ruby">irb(main)&gt; z = &quot;meow          &quot;.strip
 =&gt; &quot;meow&quot;
@@ -64,20 +55,20 @@ irb(main)&gt; z.strip!
 irb(main)&gt; z == &quot;meow&quot;
 =&gt; true
 </code></pre>
-<p>If you call an exclamation point after a method name, this will make a permanent change to the value the method is called upon.</p>
-<h3 id="-concat">.concat</h3>
-<pre><code class="lang-ruby">irb(main)&gt; &quot;ROFL&quot;.concat(&quot;copter&quot;)
-=&gt; &quot;ROFLcopter&quot;
-</code></pre>
-<p>This method will combine two strings together.</p>
+<p>If you call an exclamation point after a method name, this will make a permanent
+change to the value the method is called upon.</p>
 <h2 id="time">Time</h2>
 <h3 id="now">now</h3>
-<pre><code>Time.now
-</code></pre><p>This returns the current time</p>
+<pre><code class="lang-ruby">Time.now
+</code></pre>
+<p>This returns the current time.</p>
 <h3 id="strftime">strftime</h3>
 <pre><code class="lang-ruby">irb(main)&gt; Time.now.strftime &#39;%Y %B&#39;
 =&gt; &#39;2014 January&#39;
 irby(main)&gt; Time.now.strftime &#39;%B %Y&#39;
 =&gt; &#39;January 2014&#39;
 </code></pre>
-<p>This method stands for &#39;string format time&#39;. It takes a string containing matchers that are found in the Ruby documentation and will return a string representing the attributes of a Time instance that are in the string passed to the method.</p>
+<p>This method stands for &#39;string format time&#39;. It takes a string containing
+matchers that are found in the Ruby documentation and will return a string
+representing the attributes of a Time instance that are in the string passed to
+the method.</p>

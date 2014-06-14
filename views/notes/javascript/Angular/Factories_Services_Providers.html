@@ -1,0 +1,57 @@
+<h1 id="services">Services</h1>
+<pre><code class="lang-js">var myApp = angular.module(&#39;myApp&#39;, []);
+
+//service style, probably the simplest one
+myApp.service(&#39;helloWorldFromService&#39;, function() {
+    this.sayHello = function() {
+        return &quot;Hello, World!&quot;
+    };
+});
+</code></pre>
+<h1 id="factories">Factories</h1>
+<pre><code class="lang-js">//factory style, more involved but more sophisticated
+myApp.factory(&#39;helloWorldFromFactory&#39;, function() {
+    return {
+        sayHello: function() {
+            return &quot;Hello, World!&quot;
+        }
+    };
+});
+</code></pre>
+<h1 id="providers">Providers</h1>
+<pre><code class="lang-js">//provider style, full blown, configurable version     
+myApp.provider(&#39;helloWorld&#39;, function() {
+    // In the provider function, you cannot inject any
+  // service or factory. This can only be done at the
+    // &quot;$get&quot; method.
+
+    this.name = &#39;Default&#39;;
+
+    this.$get = function() {
+        var name = this.name;
+        return {
+            sayHello: function() {
+                return &quot;Hello, &quot; + name + &quot;!&quot;
+            }
+        }
+    };
+
+    this.setName = function(name) {
+        this.name = name;
+    };
+});
+
+//hey, we can configure a provider!            
+myApp.config(function(helloWorldProvider){
+    helloWorldProvider.setName(&#39;World&#39;);
+});
+</code></pre>
+<h2 id="dependency-injection">Dependency Injection</h2>
+<pre><code class="lang-js">function MyCtrl($scope, helloWorld, helloWorldFromFactory, helloWorldFromService) {
+
+    $scope.hellos = [
+        helloWorld.sayHello(),
+        helloWorldFromFactory.sayHello(),
+        helloWorldFromService.sayHello()];
+}​
+</code></pre>

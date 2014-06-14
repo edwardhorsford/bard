@@ -1,0 +1,60 @@
+<h1 id="rails">Rails</h1>
+<p>Ruby on Rails, often simply Rails, is an open source web application framework which runs on the Ruby programming language. It is a full-stack framework: it allows creating pages and applications that gather information from the web server, talk to or query the database, and render templates out of the box. As a result, Rails features a routing system that is independent of the web server.</p>
+<p>Ruby on Rails emphasizes the use of well-known software engineering patterns and principles, such as active record pattern, convention over configuration (CoC), don&#39;t repeat yourself (DRY), and model–view–controller (MVC).</p>
+<h2 id="routes">Routes</h2>
+<p>Routes define which controller and which method should be called when a user accesses a certain url. In Rails, routes are defined in the <code>config/routes.rb</code> file.</p>
+<p>To define a route:</p>
+<pre><code>get &quot;/books&quot; =&gt; &quot;books#index&quot;
+
+httpverb &quot;url&quot; =&gt; &quot;controller_name#method_name&quot;
+</code></pre><p>To define a dynamic route with a param in the url:</p>
+<pre><code>get &quot;/books/:id&quot; =&gt; &quot;books#show&quot;
+
+/**
+ * This route makes a key in the params hash named id 
+ * available in the show method within the BooksController as seen
+ * in the controller example above.
+ */
+</code></pre><p>To define the root route:</p>
+<pre><code>root &quot;controller_name#method_name&quot;
+</code></pre><p><strong>Note</strong> There is precedence in the routes file.
+Let&#39;s say you had a url to show a book and a url to create a book defined like so:</p>
+<pre><code>get &#39;/books/:id&#39; =&gt; &#39;books#show&#39;
+get &#39;/books/new&#39; =&gt; &#39;books#new&#39;
+</code></pre><p>This configuration will raise an error because when the user navigates to &#39;/books/new&#39;, Rails is going to interpret the show route before the new route. This means that your application will attempt to search the Books table for a book that has an id of &#39;new&#39;, which it will not find. The proper configuration would be:</p>
+<pre><code>get &#39;/books/new&#39; =&gt; &#39;books#new&#39;
+get &#39;/books/:id&#39; =&gt; &#39;books#show&#39;
+</code></pre><h2 id="rest">REST</h2>
+<p>REST stands for Representational State Trasfer. It is an architectural style consisting of a coordinated set of constraints applied to components, connectors, and data elements, within a distributed hypermedia system. REST ignores the details of component implementation and protocol syntax in order to focus on the roles of components, the constraints upon their interaction with other components, and their interpretation of significant data elements.</p>
+<h2 id="crud">CRUD</h2>
+<p>CRUD stands for Create, Read, Update, and Delete. These are the four basic functions of persistent storage. The data of your application, and the applications that your data interacts with, is created, read, updated, and deleted. This matches HTTP verbs:</p>
+<p>Create -&gt; POST
+Read -&gt; GET
+Update -&gt; PUT
+Delete -&gt; DELETE</p>
+<h2 id="rake">Rake</h2>
+<p>Rake is a Ruby task manager. You will use it to execute tasks such as database migrations. Rails itself comes with many task preloaded common for managing a Rails application. You can also create your own tasks.</p>
+<p>You can run <code>rake -T</code> to see all of the available tasks in the current environment.</p>
+<h2 id="commands">Commands</h2>
+<h3 id="rails-new">rails new</h3>
+<pre><code>rails new project_name
+</code></pre><p>This command will create a new Rails application, installing the Rails boilerplate into a directory with the same name of the project name you pass to it.</p>
+<h3 id="rails-server-or-rails-s">rails server or rails s</h3>
+<pre><code>rails server
+</code></pre><p>This command starts the rails server. By default, the server will run on port 3000.</p>
+<p>This command must be executed while you are inside the main directory of your Rails application.</p>
+<h3 id="rails-generate-or-rails-g">rails generate or rails g</h3>
+<pre><code>rails generate scaffold Post title:string content:string
+</code></pre><p>This command will generate a resource of the type you pass to it. The types of resources can be model, controller, view, scaffold, etc.</p>
+<h3 id="rails-destroy-or-rails-d">rails destroy or rails d</h3>
+<pre><code>rails destroy scaffold Post title:string content:string
+</code></pre><p>This command will destroy any files that were created during a processed migration.</p>
+<h4 id="scaffold">scaffold</h4>
+<p>Running <code>rails generate scaffold ...</code> will generate a model, controller, views, database migration file, and other files with the name and attributes you pass to it.</p>
+<h2 id="time">Time</h2>
+<h3 id="hours-weeks-minutes-etc-with-since-ago">hours, weeks, minutes, etc. with since &amp; ago</h3>
+<pre><code>5.hours.ago
+5.minutes.ago
+5.weeks.ago
+5.hours.since(5.weeks.ago)
+</code></pre><p>These methods are used in conjuction with the since and ago methods to return a Time instance representing how far in the past or future you want the instance to be set to.</p>
