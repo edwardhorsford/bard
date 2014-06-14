@@ -1,0 +1,53 @@
+<h1 id="views">Views</h1>
+<p>The views of your application hold the HTML that will be rendered in the user&#39;s browser.</p>
+<h2 id="erb">ERB</h2>
+<p>ERB is a templating language that allows developers to include Ruby code into the template. When a user accesses a route that requires the template file, the server will preprocess the template, executing the Ruby code within it to return the user properly formatted HTML.</p>
+<p>The syntax for injecting Ruby code into a .erb file is:</p>
+<pre><code>&lt;% /** Ruby code goes here */ %&gt;
+</code></pre><p>The syntax for injecting Ruby code that you want printed to the screen is:</p>
+<pre><code>&lt;%= /** Ruby code to get printed to users&#39; screen */ %&gt;
+</code></pre><h3 id="iterating">Iterating</h3>
+<p>Let&#39;s say you had three books saved in your database and you defined a @books variable in the controller responsible for this view that is equal to those books.</p>
+<p>You could list all of the books like so:</p>
+<pre><code>&lt;% @books.each do |book| %&gt;
+    &lt;h1&gt;&lt;%= book.title %&gt;&lt;/h2&gt;
+    &lt;p&gt;&lt;%= book.content %&gt;&lt;/p&gt;
+&lt;% end %&gt;
+</code></pre><h3 id="links">Links</h3>
+<pre><code>&lt;%= link_to book.title, book %&gt;
+
+/** 
+ * This code will inject an achor tag into the generate HTML 
+ * file with the href equal to the url that will show the book, such as:
+ * 
+ * &lt;a href=&#39;/books/1&#39;&gt;The Kitty Cat Rules The Day&lt;/a&gt;
+ */
+</code></pre><h3 id="forms">Forms</h3>
+<pre><code>&lt;%= form_for @book do |f| %&gt;
+    &lt;%= f.label :title %&gt;
+    &lt;%= f.text_field :title %&gt;
+
+    &lt;br/&gt;
+
+    &lt;%= f.label :content %&gt;
+    &lt;%= f.text_area :content %&gt;
+
+    &lt;br/&gt;
+
+    &lt;%= f.submit %&gt;
+&lt;% end %&gt;
+</code></pre><pre><code>&lt;%= form_tag &#39;/urls&#39;, method: &#39;get&#39;, remote: true, multipart: true do |f| %&gt;
+    /** form fields*/
+&lt;% end %&gt;
+</code></pre><h4 id="-"> </h4>
+<ul>
+<li><strong>method</strong> This defines the HTTP method executed when submitted the form. You can only use GET and POST requests on HTML forms.</li>
+<li><strong>remote</strong> This defines whether the form should be submitted via an AJAX request, allowing you to submit the form without reloading the page or redirecting to a new page.</li>
+<li><strong>multipart</strong> This defines whether or not there will be media items submitted with the form, such as images, music, or a video.</li>
+</ul>
+<h3 id="flash-messages">Flash Messages</h3>
+<pre><code>flash[:error] = &quot;Username and password do not match.&quot;
+</code></pre><p>Flash messages are defined within controller methods and are rendered to the view associated with that method upon render. You can assign as many keys to the flash object as you need. You only have to ensure that the symbol you assign is the same used within the view for it to be rendered.</p>
+<h4 id="now">now</h4>
+<pre><code>flash.now[:info] = &quot;New book created.&quot;
+</code></pre><p>This method is used when rendering a view, while the standard method of using flash is only implemented upon redirect.</p>

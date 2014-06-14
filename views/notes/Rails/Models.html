@@ -1,0 +1,54 @@
+<h1 id="models">Models</h1>
+<p>The models of your application are representations of the data of your application. In Rails, they are instances of ActiveRecord::Base.</p>
+<p>To create a new model:</p>
+<pre><code>rails generate model Post
+</code></pre><p>This command will create a new file with a model template in the app/models folder.</p>
+<h2 id="validation">Validation</h2>
+<pre><code>class Book
+    validates :title, presence: true
+end
+
+Book.create(author: &#39;Dr.Meowingtons&#39;).valid? #=&gt; false
+Book.create(title: &#39;Meowcakes&#39;, author: &#39;Dr.Meowingtons&#39;).valid? #=&gt; true
+</code></pre><p>Validations are used to validate the attributes of a model instance upon save and update.</p>
+<p>To see a full list and explanation of all the possible options you can validate a model instance with, see <a href="http://edgeguides.rubyonrails.org/active_record_validations.html">Rails Validations</a></p>
+<h2 id="methods">Methods</h2>
+<h3 id="new">new</h3>
+<pre><code>Book.new title: &#39;Meowcakes&#39;, author: &#39;Dr.Meowingtons&#39;, year: 4444
+</code></pre><p>This method creates a new instance of the model.</p>
+<h3 id="create">create</h3>
+<pre><code>Book.create title: &#39;Meowcakes&#39;, author: &#39;Dr.Meowingtons&#39;, year: 4444
+</code></pre><p>This method creates a new instance of the model and saves a new record in the database.</p>
+<h3 id="all">all</h3>
+<pre><code>Book.all // [{&quot;title&quot; =&gt; &quot;Meowcakes&quot;, &quot;author&quot; =&gt; &quot;Dr.Meowingtons&quot;, &quot;year&quot; =&gt; 4444 }]
+</code></pre><p>This method returns an array containing all the instances of class saved in the database.</p>
+<h3 id="find">find</h3>
+<pre><code>Book.find 1 // {&quot;title&quot; =&gt; &quot;Meowcakes&quot;, &quot;author&quot; =&gt; &quot;Dr.Meowingtons&quot;, &quot;year&quot; =&gt; 4444 }
+</code></pre><p>This method takes an integer and will return the record in the database that has that integer as its id.</p>
+<h3 id="where">where</h3>
+<pre><code>Book.where &quot;id &lt; 17&quot;
+/** This method will return all of the records whose id is less than 17 */
+</code></pre><p>This method takes a string to search the database table by.</p>
+<h3 id="select">select</h3>
+<pre><code>Book.select(:title, :id).where(&quot;id &lt; 17&quot;) // { id: 1, title: &#39;Meowcakes&#39;}
+</code></pre><p>This method is used to select the columns of the table that you want returned, this way the response will not be full of columns that you don&#39;t need.</p>
+<h3 id="changes">changes</h3>
+<pre><code>Book.changes
+</code></pre><p>This method will return all the changes made to instances of the class that have not yet been persisted the database</p>
+<h3 id="attribute_names">attribute_names</h3>
+<pre><code>Book.attribute_names // [&#39;title&#39;, &#39;author&#39;, &#39;year&#39;]
+</code></pre><p>This method returns all of the columns of the table for the model.</p>
+<h3 id="order">order</h3>
+<pre><code>Book.order(&#39;created_at DESC&#39;)
+</code></pre><p>This method is used to decide the order you want the response of a database query to be returned in.</p>
+<h2 id="instance-methods">Instance Methods</h2>
+<pre><code>book = Book.new title: &#39;Meowcakes&#39;, author: &#39;Dr.Meowingtons&#39;, year: 4444
+</code></pre><h3 id="save">save</h3>
+<pre><code>book.save
+</code></pre><p>This method will save the record to the database. This can be used on a newly instantiated instance of a class or on an existing one that has unsaved changes.</p>
+<h3 id="destroy">destroy</h3>
+<pre><code>book.destroy
+</code></pre><p>This method destroys that instance of the class and removes the record from the database.</p>
+<h3 id="update_attributes">update_attributes</h3>
+<pre><code>book.update_attributes({title: &#39;Meowcakes 2&#39;, author: &#39;Dr.Meowingtons III&#39;})
+</code></pre><p>This method will update the attributes of the instance passed in the hash and save the changes to the database.</p>

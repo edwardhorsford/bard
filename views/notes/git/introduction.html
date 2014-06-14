@@ -1,4 +1,66 @@
 <h1 id="git">Git</h1>
-<pre><code class="lang-bash">&gt; git init
-</code></pre>
-<p>This command initializes a git repository in the current directory.</p>
+<p><img src="../../assets/images/git.png" alt="Git"></p>
+<ul>
+<li>Version Control System</li>
+<li>Source Control Management Tool - Handles the management of changes to documents. It allows developers to manage multiple versions of the same codebase, which comes in handy when bugs get accidently introduced and the application needs to be reverted to a previous working state.</li>
+</ul>
+<h2 id="commands">Commands</h2>
+<h3 id="git-init">git init</h3>
+<pre><code>~&gt; git init
+</code></pre><ul>
+<li>initialises a new git repository in current working directory</li>
+</ul>
+<h3 id="git-add">git add</h3>
+<pre><code>~&gt;  git add a.txt
+~&gt;  git add .
+</code></pre><ul>
+<li>if done on a file that is not being tracked, this command will add file to tracked files and adds it to staging area</li>
+<li>when done on a file that is already being tracked, this command will just add current state of file to staging area</li>
+<li>you can pass a filename to this command to add one file of you can type &#39;.&#39; to add all unstaged changes</li>
+</ul>
+<h3 id="git-add">git add</h3>
+<pre><code>~&gt;  git diff
+</code></pre><pre><code>~&gt;  git diff a.txt
+</code></pre><h3 id="git-commit">git commit</h3>
+<p><code>git commit -m &#39;Initial commit&#39;</code></p>
+<ul>
+<li>commits staged changes</li>
+<li>this command takes one mandatory flag (&#39;-m&#39;), which stands for the message you want to attach to this commit</li>
+</ul>
+<h3 id="git-pull">git pull</h3>
+<p><code>git pull origin master</code></p>
+<ul>
+<li>pulls codebase from hosting server and merges it with your codebase</li>
+</ul>
+<h3 id="git-push">git push</h3>
+<p><code>git push origin master</code></p>
+<ul>
+<li>pushs your code to hosting server and merges it with its codebase</li>
+<li>This command takes two arguments. The first argument is the remote server to
+which you wish to push your code. The second argument is the branch that you
+wish to push to.</li>
+</ul>
+<h3 id="git-branch">git branch</h3>
+<p><code>git branch new_branch</code></p>
+<ul>
+<li>duplicates your current branch into a new branch</li>
+<li>changes made in one branch do not affect other branches until the two branches are merged together</li>
+</ul>
+<h3 id="git-checkout">git checkout</h3>
+<p><code>git checkout new_branch</code></p>
+<ul>
+<li>moves you into the branch whose name is passed to this command</li>
+</ul>
+<p><code>git checkout -b new_branch</code></p>
+<ul>
+<li>you can create a new branch and checkout into it in one command by doing:</li>
+</ul>
+<h3 id="git-merge">git merge</h3>
+<p><code>git merge new_branch</code></p>
+<ul>
+<li>merges one branch with the current branch</li>
+</ul>
+<h2 id="best-practices">Best Practices</h2>
+<ul>
+<li>When writing a commit message, explicitly state the changes you have made</li>
+</ul>
