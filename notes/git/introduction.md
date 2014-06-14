@@ -7,13 +7,13 @@
 
 ## Commands
 
-### git init 
+### git init
 
 ```
 ~> git init
 ```
 
-- initializes a new git repository in current working directory
+- initialises a new git repository in current working directory
 
 ### git add
 
@@ -25,6 +25,16 @@
 - if done on a file that is not being tracked, this command will add file to tracked files and adds it to staging area
 - when done on a file that is already being tracked, this command will just add current state of file to staging area
 - you can pass a filename to this command to add one file of you can type '.' to add all unstaged changes
+
+### git add
+
+```
+~>  git diff
+```
+
+```
+~>  git diff a.txt
+```
 
 ### git commit
 
@@ -45,7 +55,7 @@
 
 - pushs your code to hosting server and merges it with its codebase
 - This command takes two arguments. The first argument is the remote server to
- which you wish to push your code. The second argument is the branch that you 
+ which you wish to push your code. The second argument is the branch that you
  wish to push to.
 
 
