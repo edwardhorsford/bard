@@ -39,6 +39,17 @@
 ~>  git diff a.txt
 ```
 
+### git rm
+
+
+```
+~>  git rm a.txt
+```
+
+This command is used to remove files from Git. Running it as shown above will
+also remove the file from your computer. You can run this command with `--cached`
+to remove the file from the git staging area.
+
 ### git commit
 
 ```
