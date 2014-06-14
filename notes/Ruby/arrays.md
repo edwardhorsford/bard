@@ -126,10 +126,13 @@ This method returns an array with the values of the original array moved around 
 
 ```ruby
 irb(main)> array_name = [1,2,3]
-irb(main)> array_name.reverse // [3,2,1]
-irb(main)>array_name // [1,2,3]
+irb(main)> array_name.reverse
+=> [3,2,1]
+irb(main)> array_name
+=> [1,2,3]
 irb(main)> array_name.reverse!
-irb(main)> array_name // [3,2,1]
+irb(main)> array_name
+=> [3,2,1]
 ```
 
 This method returns an array with the values of the original array in reverse
@@ -141,7 +144,8 @@ to sort.
 
 ```ruby
 irb(main)> array_name = ['the','cat','is','awesome']
-irb(main)> array_name.join(' ') // 'the cat is awesome'
+irb(main)> array_name.join(' ')
+=> 'the cat is awesome'
 ```
 
 This method joins the values of the array into a string delimited by the value
@@ -153,7 +157,8 @@ passed to this method.
 
 ```ruby
 irb(main)> array_name = [false, true, false]
-irb(main)> array_name.any? // true
+irb(main)> array_name.any?
+=> true
 ```
 
 This method returns true if any of the values within the array are truthy.
@@ -164,9 +169,11 @@ This method returns true if any of the values within the array are truthy.
 
 ```ruby
 irb(main)> array_name = [false, true, false]
-irb(main)> array_name.all? // false
+irb(main)> array_name.all?
+=> false
 irb(main)> array_name = [true, true, true]
-irb(main)> array_name.all? // true
+irb(main)> array_name.all?
+=> true
 ```
 
 This method returns true if all of the values in the array are truthy
@@ -195,7 +202,6 @@ each item. It also returns the original array.
 
 ```ruby
 irb(main)> arr = [1,2,3]
-
 irb(main)> arr.map! do |x|
 irb(main)>   x += 10
 irb(main)> end
