@@ -63,26 +63,12 @@ Returns the class of the object upon which it is called
 ```ruby
 irb(main)> [1,2,3].include?(2)
 => true
-irb(main)> "cj".include?("c")
-=> true
 irb(main)> [4,5,6].include?("j")
 => false
 ```
 
 This method will check to see if the argument is present in the value the
 method is called on.
-
-### .strip
-
-```ruby
-irb(main)> "hello     ".strip
-=> "hello"
-```
-
-The strip method will return the value of a string with the whitespace at the
-end removed.
-
-#### Note: This method does not change the value of the string.
 
 ### !
 
@@ -97,27 +83,18 @@ irb(main)> z == "meow"
 => true
 ```
 
-If you call an exclamation point after a method name, this will make a permanent change to the value the method is called upon.
-
-### .concat
-
-```ruby
-irb(main)> "ROFL".concat("copter")
-=> "ROFLcopter"
-```
-
-This method will combine two strings together.
-
-
+If you call an exclamation point after a method name, this will make a permanent
+change to the value the method is called upon.
 
 ## Time
 
 ### now
-```
+
+```ruby
 Time.now
 ```
 
-This returns the current time
+This returns the current time.
 
 ### strftime
 
@@ -127,4 +104,8 @@ irb(main)> Time.now.strftime '%Y %B'
 irby(main)> Time.now.strftime '%B %Y'
 => 'January 2014'
 ```
-This method stands for 'string format time'. It takes a string containing matchers that are found in the Ruby documentation and will return a string representing the attributes of a Time instance that are in the string passed to the method.
+
+This method stands for 'string format time'. It takes a string containing
+matchers that are found in the Ruby documentation and will return a string
+representing the attributes of a Time instance that are in the string passed to
+the method.
