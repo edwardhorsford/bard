@@ -1,13 +1,13 @@
 # Git
 
+![Git](../../assets/images/git.png)
+
 - Version Control System
-	- Handles the management of changes to documents. It allows developers to manage multiple versions of the same codebase, which comes in handy when bugs get accidently introduced and the application needs to be reverted to a previous working state.
+- Source Control Management Tool - Handles the management of changes to documents. It allows developers to manage multiple versions of the same codebase, which comes in handy when bugs get accidently introduced and the application needs to be reverted to a previous working state.
 
 ## Commands
 
-### git init
-- initializes a new git repository in current working directory
-***
+### git init - initializes a new git repository in current working directory
 
 ### git add
 - if done on a file that is not being tracked, this command will add file to tracked files and adds it to staging area
