@@ -2,8 +2,11 @@
 
 ![Git](../../assets/images/git.png)
 
-- Version Control System
-- Source Control Management Tool - Handles the management of changes to documents. It allows developers to manage multiple versions of the same codebase, which comes in handy when bugs get accidently introduced and the application needs to be reverted to a previous working state.
+Git is a version control system and source control management tool. It handles
+the management of changes to documents. It allows developers to manage multiple
+versions of the same codebase, which comes in handy, for example, when bugs get
+accidentally introduced and the application needs to be reverted to a previous
+working state. It also helps
 
 ## Committing
 
