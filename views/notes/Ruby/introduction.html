@@ -1,0 +1,83 @@
+<h1 id="ruby">RUBY</h1>
+<p><img src="../../assets/images/ruby-logo.png" alt="Ruby Logo"></p>
+<p>Ruby is a dynamic, general-purpose, object-oriented language created in 1995 by
+Yukihiro Matsumoto. He created Ruby with the explicit goal of making a
+programming language that is readable by humans and fun for developers to work
+with.</p>
+<p>As an object-oriented language, everything in Ruby is an object and belongs to
+class. A class is an object from which other objects can inherit and overwrite
+values and methods. For example, the number 2 is an object belonging to the
+Fixnum class. Fixnum, itself is an object, that extends from the Class class.</p>
+<h2 id="irb-pry">IRB &amp; Pry</h2>
+<p><strong>IRB</strong>, which stands for Interactive Ruby, allows you to execute Ruby code from the
+command line. It is most commonly used to test the outcome of code. Every time
+you enter IRB, you are creating a new session, in which Ruby will store the
+values and state of any variables and classes you create.</p>
+<p><strong>Pry</strong> is a community-created wrapper for IRB that provides additional features,
+syntax highlighting, state navigation, and runtime invocation, which is handy
+for debugging applications</p>
+<h2 id="common-methods">Common Methods</h2>
+<h3 id="puts">puts</h3>
+<pre><code class="lang-ruby">irb(main)&gt; puts 2 + 2
+=&gt; 4
+</code></pre>
+<p>This method will write to the terminal the value that comes after it.</p>
+<h3 id="gets">gets</h3>
+<pre><code class="lang-ruby"> x = gets # [ This wil assign the user&#39;s input to the variable x ]
+</code></pre>
+<p>This method halts the execution of an application and wait for user input. It
+will stop waiting when the user presses the carriage return key. It is used to
+capture user input in command line applications.</p>
+<h3 id="-class">.class</h3>
+<pre><code class="lang-ruby">irb(main)&gt; 2.class
+=&gt; Fixnum
+irb(main)&gt; 10.34.class
+=&gt; Float
+irb(main)&gt; &#39;Gerry&#39;.class
+=&gt; String
+</code></pre>
+<p>Returns the class of the object upon which it is called</p>
+<h3 id="-include-">.include?</h3>
+<pre><code class="lang-ruby">irb(main)&gt; [1,2,3].include?(2)
+=&gt; true
+irb(main)&gt; &quot;cj&quot;.include?(&quot;c&quot;)
+=&gt; true
+irb(main)&gt; [4,5,6].include?(&quot;j&quot;)
+=&gt; false
+</code></pre>
+<p>This method will check to see if the argument is present in the value the
+method is called on.</p>
+<h3 id="-strip">.strip</h3>
+<pre><code class="lang-ruby">irb(main)&gt; &quot;hello     &quot;.strip
+=&gt; &quot;hello&quot;
+</code></pre>
+<p>The strip method will return the value of a string with the whitespace at the
+end removed.</p>
+<h4 id="note-this-method-does-not-change-the-value-of-the-string-">Note: This method does not change the value of the string.</h4>
+<h3 id="-">!</h3>
+<pre><code class="lang-ruby">irb(main)&gt; z = &quot;meow          &quot;.strip
+=&gt; &quot;meow&quot;
+irb(main)&gt; z == &quot;meow&quot;
+=&gt; false
+irb(main)&gt; z.strip!
+=&gt; &quot;meow&quot;
+irb(main)&gt; z == &quot;meow&quot;
+=&gt; true
+</code></pre>
+<p>If you call an exclamation point after a method name, this will make a permanent change to the value the method is called upon.</p>
+<h3 id="-concat">.concat</h3>
+<pre><code class="lang-ruby">irb(main)&gt; &quot;ROFL&quot;.concat(&quot;copter&quot;)
+=&gt; &quot;ROFLcopter&quot;
+</code></pre>
+<p>This method will combine two strings together.</p>
+<h2 id="time">Time</h2>
+<h3 id="now">now</h3>
+<pre><code>Time.now
+</code></pre><p>This returns the current time</p>
+<h3 id="strftime">strftime</h3>
+<pre><code class="lang-ruby">irb(main)&gt; Time.now.strftime &#39;%Y %B&#39;
+=&gt; &#39;2014 January&#39;
+irby(main)&gt; Time.now.strftime &#39;%B %Y&#39;
+=&gt; &#39;January 2014&#39;
+</code></pre>
+<p>This method stands for &#39;string format time&#39;. It takes a string containing matchers that are found in the Ruby documentation and will return a string representing the attributes of a Time instance that are in the string passed to the method.</p>
