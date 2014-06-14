@@ -1,0 +1,178 @@
+# Arrays
+An array type is a data type that is meant to describe a collection of elements (values or variables), each selected by one or more indices (identifying keys) that can be computed at run time by the program. It can store any data type, such as strings, numbers, hashes, and other arrays.
+
+```
+new_array = [1, 2, "kittens", true, [1,2,3], { kittenSound: 'meow}]
+```
+
+The values of an array are accessed by their index number.
+
+**Note: Array indexes start at 0**
+
+```
+new_array[2] // 'kittens'
+```
+
+You can also access a range of values in an array using a range.
+
+```
+new_array[0..2] // [1,2,'kittens']
+```
+
+## Array Methods
+
+### push or <<
+- adds items to an array
+
+
+```
+array_name = [1,2,3]
+array_name.push(4)
+array_name // [1,2,3,4]
+array_name << 5
+array_name // [1,2,3,4,5]
+```
+----
+### empty?
+- will return true if the array is empty and false if the array has values
+
+
+```
+array_name = []
+array_name.empty? // true
+```
+
+```
+array_name = [1,2,3]
+array_name.empty? // false
+```
+
+-----
+### pop
+- removes the last item from an array and returns the removed value
+
+
+```
+array_name = [1,2,3]
+array_name.pop
+array_name // [1,2]
+```
+
+----
+### shift
+- removes the first item from an array and returns the removed value
+
+
+```
+array_name = [1,2,3]
+array_name.shift
+array_name // [2,3]
+```
+
+----
+### unshift
+- adds items to the beginning of an array
+
+
+```
+array_name = [2,3]
+array_name.unshift(1)
+array_name // [1,2,3]
+```----
+### sort
+- returns an array with the values of the original array sorted from lowest to greatest
+- if you want to make a permanent change to the original array, add an '!' to sort
+
+
+```
+array_name = [3,2,1]
+array_name.sort // [1,2,3]
+array_name // [3,2,1]
+array_name.sort!
+array_name // [1,2,3]
+```
+
+----
+### shuffle
+- returns an array with the values of the original array moved around in a random order
+
+
+```
+array_name = [1,2,3,4,5]
+array_name.shuffle // [3,2,4,1,5]
+```
+
+----
+### reverse
+- returns an array with the values of the original array in reverse order
+- if you want to make a permanent change to the original array, add an '!' to sort
+
+
+```
+array_name = [1,2,3]
+array_name.reverse // [3,2,1]
+array_name // [1,2,3]
+array_name.reverse!
+array_name // [3,2,1]
+```
+
+----
+### join
+- joins the values of the array into a string delimited by the value passed to this method
+
+
+```
+array_name = ['the','cat','is','awesome']
+array_name.join(' ') // 'the cat is awesome'
+```
+----
+### any?
+- returns true if any of the values within the array are truthy
+
+```
+array_name = [false, true, false]
+array_name.any? // true
+```
+
+----
+### all?
+- returns true if all of the values in the array are truthy
+
+```
+array_name = [false, true, false]
+array_name.all? // false
+array_name = [true, true, true]
+array_name.all? // true
+```
+
+----
+### each
+- iterates over each item in the array executing a block of code on each item
+- this method returns the original array
+
+```
+new_arr = []
+arr = [1,2,3]
+
+arr.each do |x|
+	new_arr << x += 10
+end
+
+new_arr // [11,21,31]
+```
+
+----
+### map
+- iterates over each item in the array executing a block of code on each item
+- unlike the each method, this method returns an array with the values updated, if the values were modified within the block of code passed to it
+- you can make permanent changes to the original array by using a '!' after the word map (`map!`)
+
+```
+arr = [1,2,3]
+
+arr.map! do |x|
+	x += 10
+end
+
+arr // [11,21,31]
+```
