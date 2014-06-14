@@ -19,7 +19,10 @@
 
 ```
 ~>  git add a.txt
-~>  git add .
+```
+
+```
+~>  git add --all
 ```
 
 - if done on a file that is not being tracked, this command will add file to tracked files and adds it to staging area
@@ -38,20 +41,25 @@
 
 ### git commit
 
-`git commit -m 'Initial commit'`
-
+```
+~> git commit -m 'Initial commit'
+```
 - commits staged changes
 - this command takes one mandatory flag ('-m'), which stands for the message you want to attach to this commit
 
 ### git pull
 
-`git pull origin master`
+```
+~> git pull origin master
+```
 
 - pulls codebase from hosting server and merges it with your codebase
 
 ### git push
 
-`git push origin master`
+```
+~> git push origin master
+```
 
 - pushs your code to hosting server and merges it with its codebase
 - This command takes two arguments. The first argument is the remote server to
@@ -62,25 +70,33 @@
 
 ### git branch
 
-`git branch new_branch`
+```
+~> git branch new_branch
+```
 
 - duplicates your current branch into a new branch
 - changes made in one branch do not affect other branches until the two branches are merged together
 
 ### git checkout
 
-`git checkout new_branch`
+```
+~> git checkout new_branch
+```
 
 - moves you into the branch whose name is passed to this command
 
-`git checkout -b new_branch`
+```
+~> git checkout -b new_branch
+```
 
 - you can create a new branch and checkout into it in one command by doing:
 
 
 ### git merge
 
-`git merge new_branch`
+```
+~> git merge new_branch
+```
 
 - merges one branch with the current branch
 
