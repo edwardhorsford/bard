@@ -17,7 +17,7 @@ irb(main)> hash_name[:president]
 => 'Barack Obama'
 ```
 
-The values inside of a hash are accessed using the keys as Ruby symbols.
+The values inside of a hash are accessed using the keys as symbols.
 
 ## Adding values
 
@@ -25,6 +25,3 @@ The values inside of a hash are accessed using the keys as Ruby symbols.
 irb(main)> hash_name['first_lady'] = 'Michelle Obama'
 => { president: 'Barack Obama', first_lady: 'Michelle Obama' }
 ```
-
-You can add a key-value pair to hash in a similar way as you would declare a
-variable, but you must define what the key will be.

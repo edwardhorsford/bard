@@ -254,10 +254,7 @@ each item. It also returns the original array.
 
 ```ruby
 irb(main)> arr = [1,2,3]
-irb(main)> arr.map! do |x|
-irb(main)>   x += 10
-irb(main)> end
-irb(main)> arr
+irb(main)> arr.map { |x| x += 10 }
 => [11, 21, 31]
 ```
 
