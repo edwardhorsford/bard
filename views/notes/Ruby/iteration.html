@@ -1,0 +1,79 @@
+<h1 id="iteration">Iteration</h1>
+<h2 id="-each">.each</h2>
+<pre><code class="lang-ruby">
+numbers = [1,2,3]
+
+numbers.each do |number|
+  puts &quot;#{number}&quot;
+end
+</code></pre>
+<h2 id="-upto">.upto</h2>
+<pre><code class="lang-ruby">
+starting_point = 1
+end_point = 10
+
+starting_point.upto(end_point) do |number|
+  puts &quot;#{number}&quot;
+end
+
+# 1
+# 2
+# 3
+# 4
+# 5
+# 6
+# 7
+# 8
+# 9
+# 10
+</code></pre>
+<h2 id="-downto">.downto</h2>
+<pre><code class="lang-ruby">
+starting_point = 10
+end_point = 1
+
+starting_point.downto(end_point) do |number|
+  puts &quot;#{number}&quot;
+end
+
+# 10
+# 9
+# 8
+# 7
+# 6
+# 5
+# 4
+# 3
+# 2
+# 1
+</code></pre>
+<h2 id="while">while</h2>
+<pre><code class="lang-ruby">
+count = 5
+
+while count &gt; 0
+  puts &quot;#{count}&quot;
+  count -= 1
+end
+
+# 5
+# 4
+# 3
+# 2
+# 1
+</code></pre>
+<h2 id="until">until</h2>
+<pre><code class="lang-ruby">
+count = 1
+
+until count == 6
+  puts &quot;#{count}&quot;
+  coutn += 1
+end
+
+# 1
+# 2
+# 3
+# 4
+# 5
+</code></pre>

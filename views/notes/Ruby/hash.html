@@ -1,0 +1,19 @@
+<h1 id="hash">Hash</h1>
+<pre><code class="lang-ruby">irb(main)&gt; hash_name = { president: &#39;Barack Obama&#39; }
+=&gt; &#39;Barack Obama&#39;
+</code></pre>
+<p>A hash table (also hash map) is a data structure used to implement an
+associative array, a structure that can map keys to values. A hash table uses
+a hash function to compute an index into an array of buckets or slots, from
+which the correct value can be found.</p>
+<h2 id="accessing-values">Accessing Values</h2>
+<pre><code class="lang-ruby">irb(main)&gt; hash_name[:president]
+=&gt; &#39;Barack Obama&#39;
+</code></pre>
+<p>The values inside of a hash are accessed using the keys as Ruby symbols.</p>
+<h2 id="adding-values">Adding values</h2>
+<pre><code class="lang-ruby">irb(main)&gt; hash_name[&#39;first_lady&#39;] = &#39;Michelle Obama&#39;
+=&gt; { president: &#39;Barack Obama&#39;, first_lady: &#39;Michelle Obama&#39; }
+</code></pre>
+<p>You can add a key-value pair to hash in a similar way as you would declare a
+variable, but you must define what the key will be.</p>

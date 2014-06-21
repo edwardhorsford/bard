@@ -1,0 +1,180 @@
+<h1 id="arrays">Arrays</h1>
+<pre><code class="lang-ruby">new_array = [1, 2, 3]
+</code></pre>
+<p>An array type is a data type that is meant to describe a collection of
+elements (values or variables), each selected by one or more indices
+(identifying keys) that can be computed at run time by the program. It can store
+any data type, such as strings, numbers, hashes, and other arrays.</p>
+<h3 id="array-new">Array.new</h3>
+<pre><code class="lang-ruby">new_array = Array.new(1,2,3)
+</code></pre>
+<p>You can also create a new Array by using the Array.new command.</p>
+<p>If you are only going to create an array without assigning it to another
+variable at a later point in your application&#39;s execution, you should use the
+literal method of defining an array. Though, if you are going to assign the
+array to a new variable and want to retain the original value, you should use
+Array.new.</p>
+<p>If you assign an array to another variable using the literal method, any changes
+to the second reference variable will make changes to the orignal variable, as
+seen below.</p>
+<pre><code class="lang-ruby">irb(main)&gt; array_one = [1, 2, 3]
+=&gt; [1,2,3]
+irb(main)&gt; array_two = array_one
+=&gt; [1,2,3]
+irb(main)&gt; array_two[1] = 5
+=&gt; [1,5,3]
+irb(main)&gt; array_one
+=&gt; [1,5,3]
+irb(main)&gt; array_two
+=&gt; [1,5,3]
+</code></pre>
+<p>You can stop this from happening by using Array.new.</p>
+<pre><code class="lang-ruby">irb(main)&gt; array_one = [1, 2, 3]
+=&gt; [1,2,3]
+irb(main)&gt; array_two = Array.new(array_one)
+=&gt; [1,2,3]
+irb(main)&gt; array_two[1] = 5
+=&gt; [1,5,3]
+irb(main)&gt; array_one
+=&gt; [1,2,3]
+irb(main)&gt; array_two
+=&gt; [1,5,3]
+</code></pre>
+<h2 id="accessing-values">Accessing Values</h2>
+<p>The values of an array are accessed by their index number, like so:</p>
+<pre><code class="lang-ruby">irb(main)&gt; new_array[2] // &#39;kittens&#39;
+</code></pre>
+<p>You can also access a range of values in an array using a range, like so:</p>
+<pre><code class="lang-ruby">new_array[0..2] // [1,2,&#39;kittens&#39;]
+</code></pre>
+<p><strong>Note: Array indexes start at 0</strong></p>
+<h2 id="array-methods">Array Methods</h2>
+<h3 id="push-or-">push or &lt;&lt;</h3>
+<ul>
+<li>adds items to an array</li>
+</ul>
+<pre><code class="lang-ruby">irb(main)&gt; array_name = [1,2,3]
+irb(main)&gt; array_name.push(4)
+=&gt; [1,2,3,4]
+irb(main)&gt; array_name &lt;&lt; 5
+=&gt; [1,2,3,4,5]
+</code></pre>
+<hr>
+<h3 id="empty-">empty?</h3>
+<pre><code class="lang-ruby">irb(main)&gt; array_name = []
+irb(main)&gt; array_name.empty?
+=&gt; true
+irb(main)&gt; array_name = [1,2,3]
+irb(main)&gt; array_name.empty?
+=&gt; false
+</code></pre>
+<p>This method will return true if the array is empty and false if the array has
+values.</p>
+<hr>
+<h3 id="pop">pop</h3>
+<pre><code class="lang-ruby">irb(main)&gt; array_name = [1,2,3]
+irb(main)&gt; array_name.pop
+=&gt; [1, 2]
+</code></pre>
+<p>This method removes the last item from an array and returns the removed value.</p>
+<hr>
+<h3 id="shift">shift</h3>
+<pre><code class="lang-ruby">irb(main)&gt; array_name = [1,2,3]
+irb(main)&gt; array_name.shift
+=&gt; [2,3]
+</code></pre>
+<p>This method removes the first item from an array and returns the removed value.</p>
+<hr>
+<h3 id="unshift">unshift</h3>
+<pre><code class="lang-ruby">irb(main)&gt; array_name = [2,3]
+irb(main)&gt; array_name.unshift(1)
+=&gt; [1,2,3]
+</code></pre>
+<p>This method adds items to the beginning of an array.</p>
+<hr>
+<h3 id="sort">sort</h3>
+<pre><code class="lang-ruby">irb(main)&gt; array_name = [3,2,1]
+irb(main)&gt; array_name.sort
+=&gt; [1,2,3]
+irb(main)&gt; array_name
+=&gt; [3,2,1]
+irb(main)&gt; array_name.sort!
+=&gt; [1,2,3]
+irb(main)&gt; array_name
+=&gt; [1,2,3]
+</code></pre>
+<p>This method returns an array with the values of the original array sorted from
+lowest to greatest. If you want to make a permanent change to the original array,
+add an &#39;!&#39; to the end.</p>
+<hr>
+<h3 id="shuffle">shuffle</h3>
+<pre><code class="lang-ruby">irb(main)&gt; array_name = [1,2,3,4,5]
+irb(main)&gt; array_name.shuffle
+=&gt; [3,2,4,1,5]
+</code></pre>
+<p>This method returns an array with the values of the original array moved around in a random order</p>
+<hr>
+<h3 id="reverse">reverse</h3>
+<pre><code class="lang-ruby">irb(main)&gt; array_name = [1,2,3]
+irb(main)&gt; array_name.reverse
+=&gt; [3,2,1]
+irb(main)&gt; array_name
+=&gt; [1,2,3]
+irb(main)&gt; array_name.reverse!
+irb(main)&gt; array_name
+=&gt; [3,2,1]
+</code></pre>
+<p>This method returns an array with the values of the original array in reverse
+order. If you want to make a permanent change to the original array, add an &#39;!&#39;
+to sort.</p>
+<hr>
+<h3 id="join">join</h3>
+<pre><code class="lang-ruby">irb(main)&gt; array_name = [&#39;the&#39;,&#39;cat&#39;,&#39;is&#39;,&#39;awesome&#39;]
+irb(main)&gt; array_name.join(&#39; &#39;)
+=&gt; &#39;the cat is awesome&#39;
+</code></pre>
+<p>This method joins the values of the array into a string delimited by the value
+passed to this method.</p>
+<hr>
+<h3 id="any-">any?</h3>
+<pre><code class="lang-ruby">irb(main)&gt; array_name = [false, true, false]
+irb(main)&gt; array_name.any?
+=&gt; true
+</code></pre>
+<p>This method returns true if any of the values within the array are truthy.</p>
+<hr>
+<h3 id="all-">all?</h3>
+<pre><code class="lang-ruby">irb(main)&gt; array_name = [false, true, false]
+irb(main)&gt; array_name.all?
+=&gt; false
+irb(main)&gt; array_name = [true, true, true]
+irb(main)&gt; array_name.all?
+=&gt; true
+</code></pre>
+<p>This method returns true if all of the values in the array are truthy</p>
+<hr>
+<h3 id="each">each</h3>
+<pre><code class="lang-ruby">irb(main)&gt; new_arr = []
+irb(main)&gt; arr = [1,2,3]
+irb(main)&gt; arr.each do |x|
+irb(main)&gt;     new_arr &lt;&lt; x += 10
+irb(main)&gt; end
+=&gt; [1, 2, 3]
+irb(main)&gt; new_arr
+=&gt; [11, 21, 31]
+</code></pre>
+<p>This method iterates over each item in the array executing a block of code on
+each item. It also returns the original array.</p>
+<hr>
+<h3 id="map">map</h3>
+<pre><code class="lang-ruby">irb(main)&gt; arr = [1,2,3]
+irb(main)&gt; arr.map! do |x|
+irb(main)&gt;   x += 10
+irb(main)&gt; end
+irb(main)&gt; arr
+=&gt; [11, 21, 31]
+</code></pre>
+<p>This method iterates over each item in the array executing a block of code on
+each item. Unlike the each method, this method returns an array with the values
+updated, if the values were modified within the block of code passed to it. You
+can make permanent changes to the original array by using a &#39;!&#39;.</p>

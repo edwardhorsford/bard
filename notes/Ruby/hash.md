@@ -1,7 +1,8 @@
 # Hash
 
 ```ruby
-hash_name = { president: 'Barack Obama' }
+irb(main)> hash_name = { president: 'Barack Obama' }
+=> 'Barack Obama'
 ```
 
 A hash table (also hash map) is a data structure used to implement an
@@ -12,7 +13,8 @@ which the correct value can be found.
 ## Accessing Values
 
 ```ruby
-hash_name[:president] // 'Barack Obama'
+irb(main)> hash_name[:president]
+=> 'Barack Obama'
 ```
 
 The values inside of a hash are accessed using the keys as Ruby symbols.
@@ -20,8 +22,8 @@ The values inside of a hash are accessed using the keys as Ruby symbols.
 ## Adding values
 
 ```ruby
-hash_name['first_lady'] = 'Michelle Obama'
-hash_name // { president: 'Barack Obama', first_lady: 'Michelle Obama' }
+irb(main)> hash_name['first_lady'] = 'Michelle Obama'
+=> { president: 'Barack Obama', first_lady: 'Michelle Obama' }
 ```
 
 You can add a key-value pair to hash in a similar way as you would declare a
