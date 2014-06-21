@@ -1,13 +1,60 @@
 # Arrays
 
 ```ruby
-new_array = [1, 2, "kittens", true, [1,2,3], { kittenSound: 'meow' }]
+new_array = [1, 2, 3]
 ```
 
 An array type is a data type that is meant to describe a collection of
 elements (values or variables), each selected by one or more indices
 (identifying keys) that can be computed at run time by the program. It can store
 any data type, such as strings, numbers, hashes, and other arrays.
+
+
+### Array.new
+
+```ruby
+new_array = Array.new(1,2,3)
+```
+
+You can also create a new Array by using the Array.new command.
+
+If you are only going to create an array without assigning it to another
+variable at a later point in your application's execution, you should use the
+literal method of defining an array. Though, if you are going to assign the
+array to a new variable and want to retain the original value, you should use
+Array.new.
+
+If you assign an array to another variable using the literal method, any changes
+to the second reference variable will make changes to the orignal variable, as
+seen below.
+
+```ruby
+irb(main)> array_one = [1, 2, 3]
+=> [1,2,3]
+irb(main)> array_two = array_one
+=> [1,2,3]
+irb(main)> array_two[1] = 5
+=> [1,5,3]
+irb(main)> array_one
+=> [1,5,3]
+irb(main)> array_two
+=> [1,5,3]
+```
+
+You can stop this from happening by using Array.new.
+
+```ruby
+irb(main)> array_one = [1, 2, 3]
+=> [1,2,3]
+irb(main)> array_two = Array.new(array_one)
+=> [1,2,3]
+irb(main)> array_two[1] = 5
+=> [1,5,3]
+irb(main)> array_one
+=> [1,2,3]
+irb(main)> array_two
+=> [1,5,3]
+```
 
 ## Accessing Values
 
