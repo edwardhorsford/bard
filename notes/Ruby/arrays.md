@@ -9,19 +9,21 @@ elements (values or variables), each selected by one or more indices
 (identifying keys) that can be computed at run time by the program. It can store
 any data type, such as strings, numbers, hashes, and other arrays.
 
+## Accessing Values
+
 The values of an array are accessed by their index number, like so:
 
 ```ruby
 irb(main)> new_array[2] // 'kittens'
 ```
 
-**Note: Array indexes start at 0**
-
 You can also access a range of values in an array using a range, like so:
 
 ```ruby
 new_array[0..2] // [1,2,'kittens']
 ```
+
+**Note: Array indexes start at 0**
 
 ## Array Methods
 
