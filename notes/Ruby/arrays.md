@@ -61,13 +61,16 @@ irb(main)> array_two
 The values of an array are accessed by their index number, like so:
 
 ```ruby
-irb(main)> new_array[2] // 'kittens'
+irb(main)> new_array = ['cats', 'felines', 'kittens']
+irb(main)> new_array[2]
+=> 'kittens'
 ```
 
 You can also access a range of values in an array using a range, like so:
 
 ```ruby
-new_array[0..2] // [1,2,'kittens']
+new_array[1..2]
+=> ['felines', 'kittens']
 ```
 
 **Note: Array indexes start at 0**
