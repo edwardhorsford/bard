@@ -14,8 +14,7 @@ Fixnum class. Fixnum, itself is an object, that extends from the Class class.
 
 ## IRB & Pry
 
-**IRB**, which stands for Interactive Ruby, allows you to execute Ruby code from the
-command line. It is most commonly used to test the outcome of code. Every time
+**IRB**, which stands for Interactive Ruby, allows you to execute Ruby code from the command line. It is most commonly used to test the outcome of code. Every time
 you enter IRB, you are creating a new session, in which Ruby will store the
 values and state of any variables and classes you create.
 
