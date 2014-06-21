@@ -1,7 +1,7 @@
 # Hash
 
 ```ruby
-hash_name = { president: 'Barack Obama'  }
+hash_name = { president: 'Barack Obama' }
 ```
 
 A hash table (also hash map) is a data structure used to implement an
