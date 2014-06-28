@@ -1,0 +1,27 @@
+# Control Structures
+
+## Loops
+
+```go
+
+  i := 99
+
+  for i >= 1 {
+      fmt.Println(i, " bottles of beer on the wall...")
+      i = i - 1
+  }
+
+```
+
+In most programming languages, there are several different methods of looping
+over a set of data or performing a repetitive task through looping. Most have
+a `for` loop, a `while` loop, etc. Go, on the other hand, only has one looping
+mechanism which is the `for` loop.
+
+You can also write the above example like so:
+
+```go
+  for i := 99; i >= 0; i-- {
+    fmt.Println(i)
+  }
+```
