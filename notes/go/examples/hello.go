@@ -10,7 +10,7 @@ import (
 /* Declare a variable */
 var who string = "World"
 
-/*  Declare a constant */
+/* Declare a constant */
 const name = "Meerkat"
 
 /* Declare an array */
@@ -35,6 +35,10 @@ func main() {
 	/* Declare a variable within a function */
 	variable_in_function := "I'm in a function!"
 
+	/* Declare a map */
+	var my_map = make(map[string]string)
+	my_map["cat"] = "Mr.Meow"
+
 	/* Conditional */
 	if len(os.Args) > 1 {
 		/* os.Args[0] is "hello" or "hello.exe" */
@@ -43,6 +47,8 @@ func main() {
 
 	fmt.Println("Array:", array)
 	fmt.Println("Slice:", slice)
+	fmt.Println("Map:", my_map)
+	fmt.Println("Map.cat:", my_map["cat"])
 	fmt.Println("Varible In Function:", variable_in_function)
 	fmt.Println("Function Return Value:", add_em(10, 15))
 	fmt.Println("Name from command line:", "Hello", who+"!")
