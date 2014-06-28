@@ -6,20 +6,25 @@ import (
 
 func main() {
 
-	/* Declare a new slice */
-	c := make([]string, 3)
-	fmt.Println("Empty slice:", c)
+	/* Declare a map */
+	my_map := make(map[string]int)
+	fmt.Println("Empty map:", my_map)
 
-	/* Append a value to a slice */
-	c = append(c, "meow")
-	fmt.Println("After append():", c)
+	/* Set values */
+	my_map["this_year"] = 2014
+	my_map["last_year"] = 2013
+	fmt.Println("After setting values:", my_map)
 
-	/* Retrieve value from slice */
-	var first_value = c[0]
-	fmt.Println("Retrieve c[0]:", first_value)
+	/* Delete value */
+	delete(my_map, "this_year")
+	fmt.Println("After deleting value:", my_map)
 
-	/* Set value on slice */
-	c[1] = "zoom"
-	fmt.Println("After setting value:", c)
+	/* Getting both return values*/
+	val1, val2 := my_map["last_year"]
+	fmt.Println("First return value of get:", val1)
+	fmt.Println("Second return value of get:", val2)
+
+	simple_map := map[string]int{"foo": 1, "bar": 2}
+	fmt.Println("Simply declared map:", simple_map)
 
 }
