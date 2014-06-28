@@ -29,9 +29,10 @@ class Car
 end
 ```
 
-An object-oriented program involves classes and objects. A class is the 
-blueprint from which individual objects are created. In object-oriented terms, 
-we say that a flat is an instance of the class Flat.
+In object-oriented programming languages, structuring your application involves 
+the use of classes and objects to encapsulate related code into reusable and
+extendable componenets. A class is the blueprint from which individual objects 
+are created.
 
 Classes are used to hold related values and methods that you will want to reuse 
 all together. For instance, using the above Car class, you can define new cars 
