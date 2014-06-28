@@ -20,3 +20,24 @@ my_map["cat"] // "Mr.Meow"
 ```go
 delete(my_map, "cat")
 ```
+
+## Shorthand
+
+You can also declare maps like so:
+
+```go
+
+  elements := map[string]string{
+      "H": "Hydrogen",
+      "He": "Helium",
+      "Li": "Lithium",
+      "Be": "Beryllium",
+      "B": "Boron",
+      "C": "Carbon",
+      "N": "Nitrogen",
+      "O": "Oxygen",
+      "F": "Fluorine",
+      "Ne": "Neon",
+  }
+
+```
