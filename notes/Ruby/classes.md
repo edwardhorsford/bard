@@ -1,5 +1,7 @@
 # Classes
 
+![Class Tree](../../assets/images/ruby_class_tree.jpg)
+
 ```ruby
 class Car
 	attr_accessor :make
@@ -9,17 +11,20 @@ class Car
 	end
 
 	def start
+		# Code to start engine
 	end
 
 	def drive
+		# Code to drive car
 	end
 
 	def brake
+		# Code to apply brakes
 	end
 
 	private
 	def open_doors
-
+		# Code to open doors
 	end
 end
 ```
@@ -32,15 +37,16 @@ Classes are used to hold related values and methods that you will want to reuse
 all together. For instance, using the above Car class, you can define new cars 
 like so:
 
-```
-bmw = Car.new
-bmw.make = 'BMW'
+```ruby
+irb(main)> bmw = Car.new('BMW')
+irb(main)> bmw.make
+=> 'BMW'
 ```
 
 Now, you will have a new instance of the Car class whose make value is set to 
 `'BMW'`.
 
-## initialize
+## Initialize
 ```ruby
 def initialize(name, age, gender)
 	@name = name
@@ -49,7 +55,7 @@ def initialize(name, age, gender)
 end
 ```
 
-The ``initialize`` method of class is executed when a new instance of the class 
+The `initialize` method of class is executed when a new instance of the class 
 is created. The parameters of this method, when coupled with variable 
 definitions as seen above, will set those values of the new class instance.
 
@@ -82,8 +88,9 @@ its ``horsepower`` set to ``500``, and its ``num_of_doors`` set to ``2``.
 
 ## attr_accessor
 
-`attr_accessor is used to define which values and methods of the class will be 
-publicly accessible.
+`attr_accessor` is used to define which values and methods of the class will be 
+publicly accessible. If you do not include an attribute or method in the 
+attr_accessor list, it will only be available to other methods within the class.
 
 ## Class Variables
 Ruby provides four types of variables:
