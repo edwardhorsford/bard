@@ -4,7 +4,7 @@ import (
 	"fmt"
 )
 
-type person struct {
+type Person struct {
 	name   string
 	age    int
 	grades []int
@@ -12,7 +12,7 @@ type person struct {
 
 func main() {
 
-	cj := person{name: "CJ", age: 28}
+	cj := Person{name: "CJ", age: 28}
 	fmt.Println("Person:", cj)
 
 	fmt.Println("Person's name:", cj.name)
