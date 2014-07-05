@@ -20,8 +20,9 @@ Devise is a flexible authentication solution for Rails based on Warden. It:
 [Devise - GitHub](https://github.com/plataformatec/devise)
 
 **To Generate A Model With Authentication**
+
 ```
-rails g devise nameOfModel
+$ rails g devise nameOfModel
 ```
 
 
