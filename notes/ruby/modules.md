@@ -19,6 +19,7 @@ class Story
   include Upvotable
 
 end
+
 ```
 
 Mixins are used to import a set of functionality into classes in order to keep
