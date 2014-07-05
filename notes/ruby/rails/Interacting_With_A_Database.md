@@ -5,12 +5,12 @@
 To generate a migration:
 
 ```
-rails g migration CreateBooks
+$ rails g migration CreateBooks
 ```
-
+s
 When the command above is executed in the terminal, it will generate a Rails migration file which will get executed the next time `rake db:migrate` is executed.
 
-```
+```ruby
 class CreateBooksTable < ActiveRecord::Migration
     
     def change
@@ -33,7 +33,7 @@ To execute a migration, you can use the `rake db:migate`. This command will run 
 ## Seeding
 
 ```
-rake db:seed
+$ rake db:seed
 ```
 
 Seeding the database is the process of injecting predefined values into your database.
@@ -57,7 +57,8 @@ There are three types of relational database associations:
 **Has And Belongs To Many:** With this relation, two or more records can have a relationship with one another through a join table. The join table would be named after the records whose relations are being stored seperated by underscores, such as *Posts_Users*. The way this relation is expressed is saying that one records has many of another record through the join table. So, a user has many posts through the Post_Users table and a post has many users through the Post_Users table. In this case, our post can have many writers and your writers can have many posts that they've written together.
 
 To create a association in a Rails:
-```
+
+```ruby
 # /migrations/...
 def change
     change_table :posts do |t|
