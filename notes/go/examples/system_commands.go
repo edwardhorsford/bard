@@ -1,25 +1,16 @@
 package main
 
 import (
-	"bytes"
-	"exec"
-	"fmt"
-	"io"
+	"log"
 	"os"
+	"os/exec"
 )
 
 func main() {
-	app := "/bin/ls"
-	cmd, err := exec.Run(app, []string{app, "-l"}, nil, "", exec.DevNull, exec.Pipe, exec.Pipe)
-
-	if err != nil {
-		fmt.Fprintln(os.Stderr, err.String())
-		return
+	cmd := exec.Command("ls", "-l")
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	if err := cmd.Run(); err != nil {
+		log.Fatal(err)
 	}
-
-	var b bytes.Buffer
-	io.Copy(&b, cmd.Stdout)
-	fmt.Println(b.String())
-
-	cmd.Close()
 }
