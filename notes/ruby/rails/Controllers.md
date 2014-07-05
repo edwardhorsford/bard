@@ -1,6 +1,6 @@
 # Controllers
 
-```
+```ruby
 class BooksController < ApplicationController
 
 	def index
@@ -41,7 +41,7 @@ The controllers of your application link your business logic to the views. The m
 In Rails, the base controller for a Rails application is ApplicationController which inherits from ActionController::Base. All other controllers that you create will inherit from ApplicationController, as seen in the BooksController above.
 
 ## Filters
-```
+```ruby
 before_filter :authenticate_user, only: [ :index, :edit ]
 ```
 
