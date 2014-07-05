@@ -29,6 +29,12 @@ func main() {
 	f, err := os.Open(os.Args[1])
 	check(err)
 
+	// This will ensure that the file is closed when the function is done
+	// executing. Defining this immediately after opening the file makes it
+	// easier to ensure that the file is closed as opposed to having to define
+	// it somewhere later in the code.
+	defer f.Close()
+
 	// Read some bytes from the beginning of the file.
 	// Allow up to 5 to be read but also note how many
 	// actually were read.
@@ -39,22 +45,28 @@ func main() {
 
 	// You can also `Seek` to a known location in the file
 	// and `Read` from there.
+	b2 := make([]byte, 2)
+
 	o2, err := f.Seek(6, 0)
 	check(err)
-	b2 := make([]byte, 2)
+
 	n2, err := f.Read(b2)
 	check(err)
+
 	fmt.Printf("%d bytes @ %d: %s\n", n2, o2, string(b2))
 
 	// The `io` package provides some functions that may
 	// be helpful for file reading. For example, reads
 	// like the ones above can be more robustly
 	// implemented with `ReadAtLeast`.
+	b3 := make([]byte, 2)
+
 	o3, err := f.Seek(6, 0)
 	check(err)
-	b3 := make([]byte, 2)
+
 	n3, err := io.ReadAtLeast(f, b3, 2)
 	check(err)
+
 	fmt.Printf("%d bytes @ %d: %s\n", n3, o3, string(b3))
 
 	// There is no built-in rewind, but `Seek(0, 0)`
@@ -70,10 +82,4 @@ func main() {
 	b4, err := r4.Peek(5)
 	check(err)
 	fmt.Printf("5 bytes: %s\n", string(b4))
-
-	// Close the file when you're done (usually this would
-	// be scheduled immediately after `Open`ing with
-	// `defer`).
-	f.Close()
-
 }
