@@ -7,7 +7,7 @@ To generate a migration:
 ```
 $ rails g migration CreateBooks
 ```
-s
+
 When the command above is executed in the terminal, it will generate a Rails migration file which will get executed the next time `rake db:migrate` is executed.
 
 ```ruby
