@@ -1,4 +1,4 @@
-# Interating With A Database
+# Database Management
 
 ## Migrations
 
@@ -10,25 +10,103 @@ $ rails g migration CreateBooks
 
 When the command above is executed in the terminal, it will generate a Rails migration file which will get executed the next time `rake db:migrate` is executed.
 
+In a migration file, there are three possible methods that can be executed, which are `up`, `down`, and `change`. `up` is used to make additions to a table, `down` is used to make deletions to a table, and `change` can be used to do both.
+
+Within these methods, there are several other methods that can be used:
+
+### `create_table`
+
 ```ruby
 class CreateBooksTable < ActiveRecord::Migration
     
     def change
         create_table :books do |t|
             t.string :title
-            t.string :body
+            t.string :author
         end
     end
 
 end
 ```
 
-In a migration file, there are three possible methods that can be executed, which are `up`, `down`, and `change`. `up` is used to make additions to a table, `down` is used to make deletions to a table, and `change` can be used to do both.
+This method will create a 'books' table with a title column and an author column.
 
-Within these methods, there are several other methods that can be used:
-* `create_table`
+### `create_join_table`
 
-To execute a migration, you can use the `rake db:migate`. This command will run the unprocessed database migrations.
+```ruby
+class CreateBooksCategoriesTable < ActiveRecord::Migration
+    
+    def change
+        create_join_table :books, :categories do |t|
+            t.index :book_id
+            t.index :category_id
+        end
+    end
+
+end
+```
+
+This method will create a join table with a book_id column for storing ids of 
+records in the books table and a category_id column for storing ids of records
+in the categories table.
+
+### `change table`
+
+```ruby
+class ChangeBooksTable < ActiveRecord::Migration
+    
+    def change
+        change_table :books do |t|
+          t.remove :description
+          t.string :isbn_number
+          t.index :isbn_number
+          t.rename :upccode, :upc_code
+        end
+    end
+
+end
+```
+
+This method will change the schema of the books table.
+
+### `rename_column`
+
+```ruby
+class RenameTileToTitleForBooks < ActiveRecord::Migration
+    
+    def change
+        rename_column :books, :tile, :title
+    end
+
+end
+```
+
+This method is used for renaming a column in a database. The above example will
+rename the `tile` column to `title`.
+
+### `remove_column`
+
+```ruby
+class RemoveNumOfChaptersFromBooks < ActiveRecord::Migration
+    
+    def change
+        remove_column :books, :num_of_chapters
+    end
+
+end
+```
+
+### `add_column`
+
+```ruby
+class AddNumOfChaptersFromBooks < ActiveRecord::Migration
+    
+    def change
+        add_column :books, :num_of_chapters
+    end
+
+end
+```
 
 ## Seeding
 
