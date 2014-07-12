@@ -84,21 +84,6 @@ end
 This method is used for renaming a column in a database. The above example will
 rename the `tile` column to `title`.
 
-### `remove_column`
-
-```ruby
-class RemoveNumOfChaptersFromBooks < ActiveRecord::Migration
-    
-    def change
-        remove_column :books, :num_of_chapters
-    end
-
-end
-```
-
-This method is used for removing columns from a database. The above example will
-remove the `num_of_chapters` column from the `books` table. 
-
 ### `add_column`
 
 ```ruby
@@ -113,6 +98,21 @@ end
 
 This method is used for adding a column to a table. The above example will add
 the `num_of_chapters` column to the `books` table.
+
+### `remove_column`
+
+```ruby
+class RemoveNumOfChaptersFromBooks < ActiveRecord::Migration
+    
+    def change
+        remove_column :books, :num_of_chapters
+    end
+
+end
+```
+
+This method is used for removing columns from a database. The above example will
+remove the `num_of_chapters` column from the `books` table. 
 
 ## Seeding
 
