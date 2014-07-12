@@ -88,7 +88,7 @@ rename the `tile` column to `title`.
 
 ```ruby
 class AddNumOfChaptersFromBooks < ActiveRecord::Migration
-    
+
     def change
         add_column :books, :num_of_chapters
     end
