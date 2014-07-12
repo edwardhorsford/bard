@@ -46,9 +46,9 @@ class CreateBooksCategoriesTable < ActiveRecord::Migration
 end
 ```
 
-This method will create a join table with a book_id column for storing ids of 
-records in the books table and a category_id column for storing ids of records
-in the categories table.
+This method will create a join table with a `book_id` column for storing ids of 
+records in the `books` table and a `category_id` column for storing ids of records
+in the `categories` table.
 
 ### `change table`
 
@@ -96,6 +96,9 @@ class RemoveNumOfChaptersFromBooks < ActiveRecord::Migration
 end
 ```
 
+This method is used for removing columns from a database. The above example will
+remove the `num_of_chapters` column from the `books` table. 
+
 ### `add_column`
 
 ```ruby
@@ -107,6 +110,9 @@ class AddNumOfChaptersFromBooks < ActiveRecord::Migration
 
 end
 ```
+
+This method is used for adding a column to a table. The above example will add
+the `num_of_chapters` column to the `books` table.
 
 ## Seeding
 
