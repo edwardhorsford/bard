@@ -14,3 +14,19 @@ NSString *myString = @"meerkat manor"
 int age = 15;
 NSString *formattedString = [NSString stringWithFormat:@"I am @d years old", age]
 ```
+
+### isEqualToString
+
+Because NSString variables are objects instead of regular strings, you must use
+a different method of determining if two NSStrings are equivalent. For this,
+the isEqualToString method is used.
+
+```objective-c
+NSString *myString = @"meerkat manor"
+NSString *myString2 = @"meerkat manor 2"
+NSString *myString3 = @"meerkat manor"
+
+[myString isEqualToString:myString2] // false
+[myString isEqualToString:myString3] // true
+
+```
