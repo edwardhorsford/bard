@@ -30,3 +30,24 @@ NSString *myString3 = @"meerkat manor"
 [myString isEqualToString:myString3] // true
 
 ```
+
+### lowercaseString
+
+```objective-c
+NSString *myString = @"MeErKat MaNor";
+NSLog(@"%@", [myString lowercaseString]);   // meerkat manor
+```
+
+### uppercaseString
+
+```objective-c
+NSString *myString = @"MeErKat MaNor";
+NSLog(@"%@", [myString uppercaseString]);   // MEERKAT MANOR
+```
+
+### capitalizedString
+
+```objective-c
+NSString *myString = @"MeErKat MaNor";
+NSLog(@"%@", [myString capitalizedString]); // Meerkat Manor
+```
