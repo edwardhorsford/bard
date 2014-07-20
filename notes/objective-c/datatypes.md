@@ -51,3 +51,36 @@ NSLog(@"%@", [myString uppercaseString]);   // MEERKAT MANOR
 NSString *myString = @"MeErKat MaNor";
 NSLog(@"%@", [myString capitalizedString]); // Meerkat Manor
 ```
+
+## NSMutableString
+
+```objective-c
+NSMutableString *myString = @"meerkat manor"
+myString = @"meerkat manor 2"
+```
+
+* mutable
+* Inherits all properties and methods from NSString
+
+## NSNumber
+
+```objective-c
+NSNumber myAge = 15;
+```
+
+* immutable
+
+## NSSet
+
+```objective-c
+NSString *alvin = @"Alvin";
+NSString *simon = @"Simon";
+NSString *theodore = @"Theodore";
+
+NSSet *chipmunks = [NSSet setWithObjects: alvin, theodore, simon];
+// or
+NSArray *chipmunksArray = @[@"Alvin", @"Theodore", @"Simon"];
+NSSet *chipmunksSet = [NSSet setWithArray: chipmunksArray];
+```
+
+* immutable unordered collection of Objective-C objects
